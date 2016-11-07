@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="thinkster">
+<head>
+  <title>thinkster-django-angular-boilerplate</title>
+
+  <base href="/" />
+
+  {% include 'stylesheets.html' %}
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 ng-view"></div>
+    </div>
+  </div>
+
+  {% include 'javascripts.html' %}
+  <a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post"
+  href="javascript:void(0)"
+  ng-show="vm.isAuthenticated"
+  ng-dialog="/static/templates/posts/new-post.html"
+  ng-dialog-controller="NewPostController as vm"></a>
+</body>
+</html>
